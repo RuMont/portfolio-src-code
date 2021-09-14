@@ -1,0 +1,13 @@
+
+#aboutButton {
+    padding: 0;
+}
+
+#aboutImage {
+    max-height: 100vh;
+    max-width: 100%;
+}
+
+#firstDiv {
+    height: 100vh;
+}

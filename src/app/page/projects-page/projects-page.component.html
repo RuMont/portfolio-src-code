@@ -1,0 +1,37 @@
+<div *ngIf="PageNumber == 1" class="container-fluid bg-dark text-light animate__animated animate__fadeInUp p-0"
+    [ngClass]="{'animate__fadeOutDown': AnimationNumber < 1, 'animate__fadeInDown': AnimationNumber == 1}">
+    <div id="firstDiv">
+        <div class="row text-center">
+            <button class="btn fs-5 text-decoration-none text-light" (click)="changePage(-1); toggleAbout()">
+                <p class="text-center"><i class="fas fa-chevron-up"></i></p>
+                <p class="text-center">Come back</p>
+            </button>
+            <span style="font-size: 4em;" class="list-inline">
+                <span class="iconify p-1 m-3" data-icon="cib:java"></span>
+                <span class="iconify p-1 m-3" data-icon="cib:python"></span>
+                <span class="iconify p-1 m-3" data-icon="cib:bootstrap" alt="bootstrap"></span>
+                <span class="iconify p-1 m-3" data-icon="cib:js"></span>
+                <span class="iconify p-1 m-3" data-icon="cib:typescript"></span>
+                <span class="iconify p-1 m-3" data-icon="cib:angular"></span>
+                <span class="iconify p-1 m-3" data-icon="cib:django"></span>
+                <span class="iconify p-1 m-3" data-icon="cib:git"></span>
+                <span class="iconify p-1 m-3" data-icon="cib:mysql"></span>
+            </span>
+        </div>
+        <div class="row p-4">
+            <div class="col-1">Work in Progress</div>
+            <div class="col-9 d-flex align-items-center">
+                <div *ngFor="let project of Projects" class="col align-self-center p-4 m-3 border border-white rounded">
+                    <h3 class="fs-4 text text-center p-1">{{project.title}}</h3>
+                    <img src="{{project.media}}" alt="">
+                    <p class="text-start fw-lighter">{{project.description}}</p>
+                    <div class="row d-flex">
+                        <button class="btn btn-light fw-bold col p-0 m-2">{{project.live}}</button>
+                        <button class="btn btn-outline-light col p-0 m-2">{{project.code}}</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </div>
+</div>

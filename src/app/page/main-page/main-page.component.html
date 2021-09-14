@@ -1,0 +1,31 @@
+<div *ngIf="PageNumber == 0" class="container-fluid bg-dark text-light animate__animated animate__fast"
+    [ngClass]="{'animate__fadeOutUp': AnimationNumber != 0, 'animate__fadeInDown': AnimationNumber == 0}">
+    <div id="firstDiv" class="row d-flex align-items-center">
+        <div class="col-1">Work in Progress</div>
+        <div class="col-4 animate__animated animate__fadeIn animate__delay-1s">
+            <h2 class="fs-3 text fw-normal">Hi, I'm Rubén</h2>
+            <h1 class="fs-1 text">Web Developer</h1>
+            <h3 class="fs-5 text fw-lighter fst-italic">
+                ``Eating is something you can easily forget to do when you are
+                focused onto another thing´´
+            </h3>
+            <!-- <a href="javascript:void(0)" class="fs-5 text-decoration-none text-light">About me <i class="fas fa-chevron-right"></i></a> -->
+            <button (click)="toggleAbout()" id="aboutButton" class="btn fs-5 text-light p-0 mt-2">
+                <p class="m-0">About me <i class="fas fa-chevron-right"></i></p>
+            </button>
+        </div>
+        <div class="col-2 align-self-end">
+            <button *ngIf="AboutText == true" (click)="changePage(1)"
+                class="btn fs-5 text-decoration-none text-light animate__animated animate__fadeInUp animate__delay-2s">
+                <p class="text-center">Check out my projects!</p>
+                <p class="text-center"><i class="fas fa-chevron-down"></i></p>
+            </button>
+        </div>
+        <div class="col-4 container">
+            <h3 *ngIf="AboutText == true" class="fs-5 text fw-lighter animate__animated animate__fadeInRight">Hi, My
+                name is Rubén Montoro. I am 23 years old and currently studying web development. I aim to become a Full
+                Stack developer because I simply cannot choose between back-end or front-end development, I love them
+                both.</h3>
+        </div>
+    </div>
+</div>
