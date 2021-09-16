@@ -10,13 +10,14 @@
                 focused onto another thing´´
             </h3>
             <!-- <a href="javascript:void(0)" class="fs-5 text-decoration-none text-light">About me <i class="fas fa-chevron-right"></i></a> -->
-            <button (click)="toggleAbout()" id="aboutButton" class="btn fs-5 text-light p-0 mt-2">
-                <p class="m-0">About me <i class="fas fa-chevron-right"></i></p>
+            <button (click)="toggleAbout()" id="aboutButton" class="btn fs-5 text-light text-decoration-underline p-0 mt-2">
+                <p class="m-0">About me</p>
+                <!-- <i class="fas fa-chevron-right"></i> -->
             </button>
         </div>
         <div class="col-2 align-self-end">
-            <button *ngIf="AboutText == true" (click)="changePage(1)"
-                class="btn fs-5 text-decoration-none text-light animate__animated animate__fadeInUp animate__delay-2s">
+            <button *ngIf="AboutText == true" (click)="changePage(1, 0)"
+                class="btn fs-5 text-decoration-none text-light animate__animated animate__fadeInUp animate__delay-1s">
                 <p class="text-center">Check out my projects!</p>
                 <p class="text-center"><i class="fas fa-chevron-down"></i></p>
             </button>

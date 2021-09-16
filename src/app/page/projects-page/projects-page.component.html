@@ -1,37 +1,45 @@
-<div *ngIf="PageNumber == 1" class="container-fluid bg-dark text-light animate__animated animate__fadeInUp p-0"
-    [ngClass]="{'animate__fadeOutDown': AnimationNumber < 1, 'animate__fadeInDown': AnimationNumber == 1}">
+<div *ngIf="PageNumber == 1" class="container-fluid bg-dark text-light animate__animated p-0"
+    [ngClass]="{'animate__fadeOutDown': AnimationNumber == 0, 'animate__fadeInUp': LastPage == 0, 'animate__fadeInDown': LastPage == 2, 'animate__fadeOutUp': AnimationNumber == 2}">
     <div id="firstDiv">
+        <div class="row text-center d-flex">
+            <div class="col"></div>
+            <div class="col">
+                <button id="#comeBack" class="btn fs-5 text-decoration-none text-light" (click)="changePage(0, 1)">
+                    <p class="text-center m-0"><i class="fas fa-chevron-up"></i></p>
+                    <p class="text-center">Come back</p>
+                </button>
+            </div>
+            <div class="col"></div>
+        </div>
+
         <div class="row text-center">
-            <button class="btn fs-5 text-decoration-none text-light" (click)="changePage(-1); toggleAbout()">
-                <p class="text-center"><i class="fas fa-chevron-up"></i></p>
-                <p class="text-center">Come back</p>
-            </button>
-            <span style="font-size: 4em;" class="list-inline">
+            <span style="font-size: 3em;" class="list-inline border border-white">
+                <h2 class="mt-2">Current Stack</h2>
                 <span class="iconify p-1 m-3" data-icon="cib:java"></span>
                 <span class="iconify p-1 m-3" data-icon="cib:python"></span>
                 <span class="iconify p-1 m-3" data-icon="cib:bootstrap" alt="bootstrap"></span>
-                <span class="iconify p-1 m-3" data-icon="cib:js"></span>
+                <span class="iconify p-1 m-3" data-icon="cib:js" style="font-size: 1.125em;"></span>
                 <span class="iconify p-1 m-3" data-icon="cib:typescript"></span>
                 <span class="iconify p-1 m-3" data-icon="cib:angular"></span>
                 <span class="iconify p-1 m-3" data-icon="cib:django"></span>
                 <span class="iconify p-1 m-3" data-icon="cib:git"></span>
-                <span class="iconify p-1 m-3" data-icon="cib:mysql"></span>
+                <span class="iconify p-1 m-3" data-icon="cib:mysql" style="font-size: 1.25em;"></span>
             </span>
         </div>
-        <div class="row p-4">
-            <div class="col-1">Work in Progress</div>
-            <div class="col-9 d-flex align-items-center">
-                <div *ngFor="let project of Projects" class="col align-self-center p-4 m-3 border border-white rounded">
+
+        <div class="row p-4 mb-5">
+            <h2 class="mt-2 pb-2 text-center">Projects</h2>
+            <div id="projectContainer" class="col d-flex flex-wrap mb-5">
+                <div *ngFor="let project of Projects" class="col p-4 m-3 border border-white rounded project">
                     <h3 class="fs-4 text text-center p-1">{{project.title}}</h3>
                     <img src="{{project.media}}" alt="">
                     <p class="text-start fw-lighter">{{project.description}}</p>
-                    <div class="row d-flex">
+                    <div class="row d-flex align-self-end">
                         <button class="btn btn-light fw-bold col p-0 m-2">{{project.live}}</button>
                         <button class="btn btn-outline-light col p-0 m-2">{{project.code}}</button>
                     </div>
                 </div>
             </div>
-            <div class="col-1"></div>
         </div>
     </div>
 </div>

@@ -10,13 +10,14 @@ export class MainPageComponent{
 
   get PageNumber() { return this.controlService.PageNumber }
   get AnimationNumber() { return this.controlService.AnimationNumber}
+  get LastPage() { return this.controlService.LastPage }
   get MainPage() { return this.controlService.MainPage }
   get AboutText() { return this.controlService.AboutText }
 
   constructor(private controlService: ControlService) {}
 
-  changePage(number: number): void {
-    this.controlService.changePage(number)
+  changePage(number: number, lastPage: number): void {
+    this.controlService.changePage(number, lastPage)
   }
 
   toggleAbout(): void {

@@ -1,3 +1,45 @@
 #firstDiv {
     height: 100vh;
 }
+
+#comeBack {
+    max-width: 10%;
+}
+
+.project {
+    min-width: 250px;
+}
+
+@media (max-width: 751px) {
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+    #projectContainer {
+        overflow-y: scroll;
+        max-height: 500px;
+    }
+}
+
+@media (max-width: 489px) {
+    #projectContainer {
+        max-height: 450px;
+    }
+}
+
+@media (max-width: 402px) {
+    #projectContainer {
+        max-height: 400px;
+    }
+}

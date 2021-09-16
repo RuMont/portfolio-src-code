@@ -1,0 +1,38 @@
+<button id="contactButton" (click)="changePage(2, PageNumber)" class="btn btn-outline-light fw-bold">CONTACT</button>
+
+
+<div *ngIf="PageNumber == 2" class="container-fluid bg-dark text-light animate__animated"
+    [ngClass]="{'animate__fadeOutDown': AnimationNumber < 2, 'animate__fadeInUp': AnimationNumber == 2}">
+    <div id="firstDiv">
+        <div class="row-1 d-flex justify-content-evenly text-center">
+            <div class="col mb-5 pb-5">
+                <button id="aboutButton" class="btn fs-5 text-decoration-none text-light" (click)="changePage(0, 2)">
+                    <p class="text-center m-0"><i class="fas fa-chevron-up"></i></p>
+                    <p class="text-center">Come back to about</p>
+                </button>
+                <button id="projectsButton" class="btn fs-5 text-decoration-none text-light" (click)="changePage(1, 2)">
+                    <p class="text-center m-0"><i class="fas fa-chevron-up"></i></p>
+                    <p class="text-center">Come back to projects</p>
+                </button>
+            </div>
+        </div>
+        <div class="row d-flex align-items-center">
+            <div class="col fs-4 text text-center">
+                <span class="">Get in touch via the form below, or by emailing <a
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=rumont98@gmail.com" target="_blank"
+                        class="text-light fw-bold" (click)="showPrompt()">rumont98@gmail.com</a>
+                </span>
+                <form target="_blank" action="http://mail.google.com/mail/?view=cm&fs=1&tf=1&to=rumont98@gmail.com&cc=&bcc=&su=SUBJECT&body=BODY" class="m-5 p-3 mx-auto animate__animated animate__fadeIn animate__delay-1s border border-light rounded">
+                    WORK IN PROGRESS
+                    <input type="text" name="name" placeholder="Your name" class="form-control mb-2">
+                    <input type="email" name="email" placeholder="Your e-mail" class="form-control mb-2">
+                    <textarea name="message" cols="30" rows="10" placeholder="Message content"
+                        class="form-control mb-2"></textarea>
+                    <input type="submit" value="Submit" class="btn btn-outline-light mb-2 flex-grow"> 
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+</div>

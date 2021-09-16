@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MainPageComponent } from './main-page/main-page.component';
 import { ProjectsPageComponent } from './projects-page/projects-page.component';
 import { PageComponent } from './page.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 
@@ -11,7 +12,8 @@ import { PageComponent } from './page.component';
   declarations: [
     MainPageComponent,
     ProjectsPageComponent,
-    PageComponent
+    PageComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule
